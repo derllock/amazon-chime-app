@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "scripts": {
+    "frontend": "cd client && npm run refine dev",
+    "backend": "cd server && npm start",
+    "start": "concurrently \"npm run frontend\" \"npm run backend\""
+  }
+}
