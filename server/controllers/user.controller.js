@@ -1,4 +1,5 @@
-import Users from '../mongodb/models.js';
+//import Users from '../mongodb/models.js';
+const Users=require('../mongodb/models.js');
 
 
 const createUser = async (req, res) => {
@@ -25,4 +26,5 @@ const getAllUsers = async (req, res) => {}
 
 const getUserInfoByID = async (req, res) => {}
 
-export { createUser,getAllUsers,getUserInfoByID};
+//export { createUser,getAllUsers,getUserInfoByID};
+module.exports={createUser,getAllUsers,getUserInfoByID};
