@@ -64,25 +64,24 @@ function App() {
 
       if (profileObj) {
         //save user to mongodb
-        const response=await fetch('http://'+process.env.REACT_APP_SERVER+'/api/v1/users',{
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({
-            name:profileObj.name,
-            email:profileObj.email,
-            avatar:profileObj.picture,
+        const response = await fetch('http://' + process.env.REACT_APP_SERVER + '/api/v1/users', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: profileObj.name,
+            email: profileObj.email,
+            avatar: profileObj.picture,
           })
         })
-        const data=await response.json();
+        const data = await response.json();
 
-        if(response.status===200)
-          {
-            localStorage.setItem(
+        if (response.status === 200) {
+          localStorage.setItem(
             "user",
             JSON.stringify({
               ...profileObj,
               avatar: profileObj.picture,
-              userid:data._id,
+              userid: data._id,
             })
           );
 
@@ -93,7 +92,7 @@ function App() {
             redirectTo: "/",
           };
         }
-        else{
+        else {
           return {
             success: false,
           };
@@ -172,38 +171,38 @@ function App() {
                   name: "teams",
                   list: MuiInferencer,
                   meta: {
-                      label: "Teams",
-                      icon: "",
+                    label: "Teams",
+                    icon: "",
                   },
-              },{
-                name: "contacts",
-                list: MuiInferencer,
-                meta: {
+                }, {
+                  name: "contacts",
+                  list: MuiInferencer,
+                  meta: {
                     label: "Contacts",
                     icon: "",
-                },
-            },{
-              name: "calendar",
-              list: MuiInferencer,
-              meta: {
-                  label: "Calendar",
-                  icon: "",
-              },
-          },{
-            name: "meetings",
-            list: MuiInferencer,
-            meta: {
-                label: "Meetings",
-                icon: "",
-            },
-        },{
+                  },
+                }, {
+                  name: "calendar",
+                  list: MuiInferencer,
+                  meta: {
+                    label: "Calendar",
+                    icon: "",
+                  },
+                }, {
+                  name: "meetings",
+                  list: MuiInferencer,
+                  meta: {
+                    label: "Meetings",
+                    icon: "",
+                  },
+                }, {
                   name: "dashboard",
                   list: MuiInferencer,
                   meta: {
-                      label: "Dashboard",
-                      icon: "🏠",
+                    label: "Dashboard",
+                    icon: "🏠",
                   },
-              },
+                },
                 // {
                 //   name: "blog_posts",
                 //   list: "/blog-posts",
